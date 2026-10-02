@@ -1,0 +1,423 @@
+/* Original theme - preserves source styling */
+body.theme-original {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: white;
+  margin: 0;
+  padding: 0;
+}
+
+.theme-original .pagewright-content {
+  max-width: 100%;
+  padding: 0;
+}
+
+.theme-original .pagewright-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.3;
+  color: #111;
+}
+
+.theme-original .pagewright-meta {
+  font-size: 12px;
+  color: #666;
+  margin-top: -8px;
+  margin-bottom: 16px;
+}
+
+.theme-original .pagewright-byline {
+  font-weight: 600;
+}
+
+.theme-original .pagewright-body {
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.theme-original .pagewright-body p {
+  margin-top: 0;
+  margin-bottom: 1em;
+  text-align: left;
+  orphans: 3;
+  widows: 3;
+}
+
+.theme-original .pagewright-body h1,
+.theme-original .pagewright-body h2,
+.theme-original .pagewright-body h3,
+.theme-original .pagewright-body h4,
+.theme-original .pagewright-body h5,
+.theme-original .pagewright-body h6 {
+  clear: both;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+.theme-original .pagewright-body img {
+  max-width: 100%;
+  height: auto;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Standalone block images */
+.theme-original .pagewright-body > img,
+.theme-original .pagewright-body p > img:only-child,
+.theme-original .pagewright-body figure > img {
+  display: block;
+  margin: 16px auto;
+}
+
+/* Inline images (Math formulas, flags, icons, small symbols) */
+.theme-original .pagewright-body img.mwe-math-fallback-image-inline,
+.theme-original .pagewright-body p img:not(:only-child),
+.theme-original .pagewright-body span img {
+  display: inline-block !important;
+  vertical-align: middle;
+  margin: 0 2px !important;
+  max-height: 2em;
+  width: auto;
+}
+
+/* Wikipedia Thumbnails */
+.theme-original .pagewright-body .thumb {
+  margin: 14px 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.theme-original .pagewright-body .thumb.tright {
+  float: right;
+  margin: 0 0 16px 20px;
+  max-width: 48%;
+  clear: right;
+}
+
+.theme-original .pagewright-body .thumb.tleft {
+  float: left;
+  margin: 0 20px 16px 0;
+  max-width: 48%;
+  clear: left;
+}
+
+.theme-original .pagewright-body .thumbinner {
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+  padding: 6px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.theme-original .pagewright-body .thumbcaption {
+  font-size: 12px;
+  line-height: 1.4;
+  color: #666;
+  margin-top: 6px;
+  text-align: left;
+}
+
+/* Wikipedia Infoboxes */
+.theme-original .pagewright-body .infobox {
+  float: right;
+  margin: 0 0 16px 20px;
+  max-width: 320px;
+  font-size: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f9f9f9;
+  break-inside: avoid;
+  clear: right;
+}
+
+.theme-original .pagewright-body a {
+  color: #0066cc;
+  text-decoration: underline;
+}
+
+.theme-original .pagewright-body pre {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px;
+  overflow-x: auto;
+  font-size: 13px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.theme-original .pagewright-body code {
+  background: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.theme-original .pagewright-body pre code {
+  background: none;
+  padding: 0;
+}
+
+.theme-original .pagewright-body table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 16px 0;
+}
+
+.theme-original .pagewright-body thead {
+  display: table-header-group;
+}
+
+.theme-original .pagewright-body tr {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.theme-original .pagewright-body th,
+.theme-original .pagewright-body td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.theme-original .pagewright-body th {
+  background: #f5f5f5;
+  font-weight: 600;
+}
+
+.theme-original .pagewright-body blockquote {
+  border-left: 4px solid #ddd;
+  margin: 16px 0;
+  padding: 8px 16px;
+  color: #555;
+  break-inside: avoid;
+}
+
+.theme-original .pagewright-body sup.reference,
+.theme-original .pagewright-body .footnote-ref {
+  font-size: 0.75em;
+  vertical-align: super;
+}
+
+.theme-original .pagewright-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 14px 16px;
+  margin: 20px 0;
+  break-inside: avoid;
+}
+
+.theme-original .pagewright-summary-card {
+  border-left: 4px solid #0066cc;
+}
+
+.theme-original .pagewright-toc-card {
+  border-left: 4px solid #5c6bc0;
+}
+
+/* Publication-Grade Document Index / Table of Contents */
+.theme-original .pagewright-index-container {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 20px 0 24px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.theme-original .pagewright-index-container.has-page-break {
+  page-break-after: always;
+  break-after: page;
+  margin-bottom: 0;
+}
+
+.theme-original .pagewright-index-header {
+  margin-bottom: 14px;
+}
+
+.theme-original .pagewright-index-eyebrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #4b5563;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.theme-original .pagewright-count-badge {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.theme-original .pagewright-index-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.theme-original .pagewright-index-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.theme-original .pagewright-index-doc-title {
+  font-size: 11.5px;
+  color: #6b7280;
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.theme-original .pagewright-index-divider {
+  height: 2px;
+  background: #e5e7eb;
+  margin: 10px 0 14px 0;
+}
+
+.theme-original .pagewright-index-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.theme-original .pagewright-index-table th {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 6px 8px;
+  border-bottom: 1.5px solid #d1d5db;
+  text-align: left;
+}
+
+.theme-original .pagewright-th-num { width: 36px; text-align: center !important; }
+.theme-original .pagewright-th-title { width: auto; }
+.theme-original .pagewright-th-dots { width: 60px; }
+.theme-original .pagewright-th-tag { width: 75px; text-align: right !important; }
+
+.theme-original .pagewright-index-row {
+  border-bottom: 1px solid #f3f4f6;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.theme-original .pagewright-index-row td {
+  padding: 7px 8px;
+  vertical-align: middle;
+}
+
+.theme-original .pagewright-col-num {
+  text-align: center;
+}
+
+.theme-original .pagewright-num-badge {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.theme-original .badge-major {
+  background: #e5e7eb;
+  color: #1f2937;
+}
+
+.theme-original .badge-sub {
+  background: #f9fafb;
+  color: #6b7280;
+}
+
+.theme-original .pagewright-index-link {
+  text-decoration: none;
+  color: #111827;
+  font-size: 13px;
+  display: inline-block;
+}
+
+.theme-original .major-row .pagewright-index-link {
+  font-weight: 700;
+}
+
+.theme-original .sub-row .pagewright-index-link {
+  font-weight: 500;
+  color: #374151;
+}
+
+.theme-original .pagewright-dots-filler {
+  display: block;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dotted #9ca3af;
+}
+
+.theme-original .pagewright-col-tag {
+  text-align: right;
+}
+
+.theme-original .pagewright-level-pill {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 9999px;
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.theme-original .pagewright-card-badge {
+  font-weight: 700;
+  font-size: 13px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.theme-original .pagewright-study-notes-block {
+  margin: 20px 0;
+  padding: 16px;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.theme-original .pagewright-notes-subtitle {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 14px 0 6px 0;
+}
+
+.theme-original .pagewright-notes-list {
+  padding-left: 1.5em;
+  margin-bottom: 12px;
+}
+
+/* Print styles */
+@media print {
+  body.theme-original {
+    color: black;
+  }
+}

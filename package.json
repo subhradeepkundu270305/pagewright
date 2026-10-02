@@ -1,0 +1,57 @@
+{
+  "name": "pagewright",
+  "version": "1.0.0",
+  "description": "Convert any webpage into a clean, professional PDF in one click",
+  "author": "Subhradeep Kundu <subhradeepkundu2005@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/subhradeepkundu270305/pagewright.git"
+  },
+  "homepage": "https://github.com/subhradeepkundu270305/pagewright#readme",
+  "bugs": {
+    "url": "https://github.com/subhradeepkundu270305/pagewright/issues"
+  },
+  "keywords": [
+    "chrome-extension",
+    "pdf",
+    "html-to-pdf",
+    "vector-pdf",
+    "reader-mode",
+    "ai-notes",
+    "groq",
+    "ollama",
+    "manifest-v3"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "package": "node scripts/package.js",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.5.0",
+    "dompurify": "^3.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^3.0.0",
+    "@types/chrome": "^0.0.268",
+    "@types/dompurify": "^3.0.5",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.19",
+    "jsdom": "^24.1.0",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.4.5",
+    "vite": "^5.3.1",
+    "vitest": "^1.6.0"
+  }
+}

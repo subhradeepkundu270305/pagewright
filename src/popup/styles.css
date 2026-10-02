@@ -1,0 +1,246 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === Midnight Ink Base Settings (420px Spacious Shell) === */
+html, body {
+  width: 420px !important;
+  min-width: 420px !important;
+  max-width: 420px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: var(--radius-xl) !important;
+  overflow: hidden !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
+  background-color: #0B1020 !important;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 420px !important;
+  min-width: 420px !important;
+  max-width: 420px !important;
+  border-radius: var(--radius-xl) !important;
+  overflow: hidden !important;
+  background-color: #0B1020 !important;
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* === Concentric Radius Utilities === */
+.radius-xs { border-radius: var(--radius-xs); }
+.radius-sm { border-radius: var(--radius-sm); }
+.radius-md { border-radius: var(--radius-md); }
+.radius-lg { border-radius: var(--radius-lg); }
+.radius-xl { border-radius: var(--radius-xl); }
+.radius-full { border-radius: var(--radius-full); }
+
+/* Progressive Squircle support where browser permits */
+@supports (corner-shape: squircle) {
+  .radius-xs { corner-shape: squircle; }
+  .radius-sm { corner-shape: squircle; }
+  .radius-md { corner-shape: squircle; }
+  .radius-lg { corner-shape: squircle; }
+  .radius-xl { corner-shape: squircle; }
+}
+
+/* === Glassmorphism Components === */
+.midnight-card {
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  box-shadow: var(--glass-shadow), var(--glass-highlight);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--dur-fast) var(--ease-out),
+              background var(--dur-fast) var(--ease-out),
+              transform var(--dur-fast) var(--ease-out),
+              box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.midnight-card:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* === Primary Convert Action Button & Idle Breathing === */
+@keyframes breathe-pulse {
+  0%, 100% {
+    box-shadow: 0 4px 18px rgba(99, 102, 241, 0.35);
+    transform: translateY(0);
+  }
+  50% {
+    box-shadow: 0 6px 26px rgba(99, 102, 241, 0.55), 0 0 16px rgba(34, 211, 238, 0.35);
+    transform: translateY(-0.5px);
+  }
+}
+
+.btn-convert-gradient {
+  position: relative;
+  background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  transition: transform var(--dur-fast) var(--ease-spring),
+              box-shadow var(--dur-fast) var(--ease-out),
+              background var(--dur-fast) var(--ease-out);
+  box-shadow: 0 4px 18px rgba(99, 102, 241, 0.35);
+}
+
+.btn-convert-gradient.idle-breathe {
+  animation: breathe-pulse 4s ease-in-out infinite;
+}
+
+.btn-convert-gradient:hover {
+  animation: none !important;
+  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  box-shadow: 0 6px 24px rgba(99, 102, 241, 0.50), 0 0 16px rgba(34, 211, 238, 0.25);
+  transform: translateY(-1.5px);
+}
+
+.btn-convert-gradient:active {
+  transform: scale(0.97);
+}
+
+/* Light sweep shine on hover */
+.btn-convert-gradient::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.30) 50%,
+    transparent 65%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.5s var(--ease-out);
+  pointer-events: none;
+}
+
+.btn-convert-gradient:hover::after {
+  transform: translateX(100%);
+}
+
+/* === Focus & Active State Glows === */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--border-focus);
+  border-radius: inherit;
+}
+
+/* === Chip Buttons === */
+.chip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 600;
+  transition: all var(--dur-fast) var(--ease-out);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.chip-btn:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.20);
+  transform: translateY(-0.5px);
+}
+
+.chip-btn:active {
+  transform: scale(0.96);
+}
+
+.chip-btn-active {
+  background: var(--accent-surface) !important;
+  color: var(--accent) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* === Expandable Grid Animation (Zero Layout Thrash) === */
+.expandable-grid {
+  display: grid;
+  transition: grid-template-rows var(--dur-slow) var(--ease-spring),
+              opacity var(--dur-base) var(--ease-out);
+}
+.expandable-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.expandable-closed {
+  grid-template-rows: 0fr;
+  opacity: 0;
+  pointer-events: none;
+}
+.expandable-inner {
+  overflow: hidden;
+}
+
+/* === Springy Switch Knob === */
+.toggle-spring {
+  transition: transform var(--dur-base) var(--ease-spring),
+              width var(--dur-fast) var(--ease-out),
+              background var(--dur-base) var(--ease-out);
+}
+
+/* === Error Shake & Red Glow === */
+@keyframes error-shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
+.error-shake {
+  animation: error-shake 400ms var(--ease-out) both;
+  box-shadow: 0 0 12px var(--error-glow) !important;
+}
+
+/* === Ripple Animation === */
+@keyframes ripple {
+  0% { transform: scale(0); opacity: 0.6; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+.animate-ripple {
+  animation: ripple 600ms linear forwards;
+}
+
+/* === Mode Switcher Sliding Pill Physics === */
+.mode-sliding-pill {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  border-radius: var(--radius-md);
+  transition: left var(--dur-slow) var(--ease-spring),
+              width var(--dur-slow) var(--ease-spring),
+              background var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out);
+  pointer-events: none;
+  z-index: 0;
+}

@@ -1,0 +1,655 @@
+/* Clean theme - professional editorial & book typography */
+body.theme-clean {
+  font-family: 'Charter', 'Bitstream Charter', 'Sitka Text', 'Cambria', 'Georgia', serif;
+  line-height: 1.62;
+  color: #1e293b;
+  background: white;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.theme-clean .pagewright-content {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.theme-clean .pagewright-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 16px;
+  line-height: 1.25;
+  color: #0f172a;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 12px;
+}
+
+.theme-clean .pagewright-meta {
+  font-size: 12.5px;
+  color: #64748b;
+  margin-top: -8px;
+  margin-bottom: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.theme-clean .pagewright-byline {
+  font-weight: 600;
+  color: #334155;
+}
+
+.theme-clean .pagewright-site {
+  color: #2563eb;
+}
+
+.theme-clean .pagewright-body {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.theme-clean .pagewright-body p {
+  margin-top: 0;
+  margin-bottom: 1em;
+  text-align: left;
+  orphans: 3;
+  widows: 3;
+}
+
+/* Headings with clear typographic scale & section clearfixes */
+.theme-clean .pagewright-body h1,
+.theme-clean .pagewright-body h2,
+.theme-clean .pagewright-body h3,
+.theme-clean .pagewright-body h4,
+.theme-clean .pagewright-body h5,
+.theme-clean .pagewright-body h6 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  color: #0f172a;
+  clear: both;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+.theme-clean .pagewright-body h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 1.8em;
+  margin-bottom: 0.5em;
+  border-bottom: 1.5px solid #e2e8f0;
+  padding-bottom: 6px;
+  line-height: 1.25;
+}
+
+.theme-clean .pagewright-body h2 {
+  font-size: 19px;
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.4em;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 4px;
+  line-height: 1.3;
+}
+
+.theme-clean .pagewright-body h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 1.3em;
+  margin-bottom: 0.3em;
+  color: #334155;
+  line-height: 1.35;
+}
+
+.theme-clean .pagewright-body h4,
+.theme-clean .pagewright-body h5,
+.theme-clean .pagewright-body h6 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 1.1em;
+  margin-bottom: 0.25em;
+  color: #475569;
+  line-height: 1.4;
+}
+
+/* Images & Media */
+.theme-clean .pagewright-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Standalone block images */
+.theme-clean .pagewright-body > img,
+.theme-clean .pagewright-body p > img:only-child,
+.theme-clean .pagewright-body figure > img {
+  display: block;
+  margin: 16px auto;
+}
+
+/* Inline images (Math formulas, flags, icons, small symbols) */
+.theme-clean .pagewright-body img.mwe-math-fallback-image-inline,
+.theme-clean .pagewright-body p img:not(:only-child),
+.theme-clean .pagewright-body span img {
+  display: inline-block !important;
+  vertical-align: middle;
+  margin: 0 2px !important;
+  max-height: 2em;
+  width: auto;
+}
+
+/* Wikipedia Thumbnails & Floated Figures */
+.theme-clean .pagewright-body .thumb {
+  margin: 14px 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.theme-clean .pagewright-body .thumb.tright {
+  float: right;
+  margin: 0 0 16px 20px;
+  max-width: 48%;
+  clear: right;
+}
+
+.theme-clean .pagewright-body .thumb.tleft {
+  float: left;
+  margin: 0 20px 16px 0;
+  max-width: 48%;
+  clear: left;
+}
+
+.theme-clean .pagewright-body .thumbinner {
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  padding: 8px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.theme-clean .pagewright-body .thumbcaption {
+  font-size: 12px;
+  line-height: 1.4;
+  color: #64748b;
+  margin-top: 6px;
+  text-align: left;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Wikipedia Infoboxes */
+.theme-clean .pagewright-body .infobox {
+  float: right;
+  margin: 0 0 16px 20px;
+  max-width: 320px;
+  width: auto;
+  font-size: 12px;
+  line-height: 1.4;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #f8fafc;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  clear: right;
+}
+
+.theme-clean .pagewright-body .infobox th,
+.theme-clean .pagewright-body .infobox td {
+  padding: 5px 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 12px;
+}
+
+.theme-clean .pagewright-body a {
+  color: #2563eb;
+  text-decoration: underline;
+  text-decoration-color: #bfdbfe;
+  text-underline-offset: 2px;
+}
+
+/* Figures */
+.theme-clean .pagewright-body figure {
+  margin: 18px 0;
+  text-align: center;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.theme-clean .pagewright-body figcaption {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #64748b;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* Code Blocks */
+.theme-clean .pagewright-body pre {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 12px 16px;
+  overflow-x: auto;
+  font-size: 12.5px;
+  line-height: 1.5;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin: 16px 0;
+}
+
+.theme-clean .pagewright-body code {
+  background: #f1f5f9;
+  color: #0f172a;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.theme-clean .pagewright-body pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* Tables */
+.theme-clean .pagewright-body table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13.5px;
+  break-inside: auto;
+}
+
+.theme-clean .pagewright-body thead {
+  display: table-header-group; /* Repeat headers across pages */
+}
+
+.theme-clean .pagewright-body tr {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.theme-clean .pagewright-body tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.theme-clean .pagewright-body th,
+.theme-clean .pagewright-body td {
+  border: 1px solid #cbd5e1;
+  padding: 10px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.theme-clean .pagewright-body th {
+  background: #f1f5f9;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* Footnotes & Citations */
+.theme-clean .pagewright-body sup,
+.theme-clean .pagewright-body sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.theme-clean .pagewright-body sup {
+  top: -0.5em;
+}
+
+.theme-clean .pagewright-body sup.reference,
+.theme-clean .pagewright-body .footnote-ref {
+  padding: 0 2px;
+  font-size: 0.75em;
+  font-weight: 500;
+}
+
+.theme-clean .pagewright-body sup.reference a {
+  text-decoration: none;
+  color: #1a5276;
+}
+
+.theme-clean .pagewright-body .footnotes,
+.theme-clean .pagewright-body .references,
+.theme-clean .pagewright-body ol.references {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #475569;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 16px;
+  margin-top: 32px;
+}
+
+/* Blockquotes */
+.theme-clean .pagewright-body blockquote {
+  border-left: 3px solid #1a5276;
+  margin: 20px 0;
+  padding: 12px 20px;
+  color: #555;
+  background: #f8f9fa;
+  font-style: italic;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.theme-clean .pagewright-body hr {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin: 2em 0;
+}
+
+.theme-clean .pagewright-body ul,
+.theme-clean .pagewright-body ol {
+  padding-left: 1.5em;
+}
+
+.theme-clean .pagewright-body li {
+  margin-bottom: 0.4em;
+}
+
+/* AI Cards & Study Notes Styles */
+.theme-clean .pagewright-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 24px 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.theme-clean .pagewright-summary-card {
+  border-left: 4px solid #3b82f6;
+  background: #f0f7ff;
+}
+
+.theme-clean .pagewright-toc-card {
+  border-left: 4px solid #6366f1;
+  background: #faf5ff;
+}
+
+/* Publication-Grade Document Index / Table of Contents */
+.theme-clean .pagewright-index-container {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 22px 26px;
+  margin: 22px 0 28px 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.theme-clean .pagewright-index-container.has-page-break {
+  page-break-after: always;
+  break-after: page;
+  margin-bottom: 0;
+}
+
+.theme-clean .pagewright-index-header {
+  margin-bottom: 16px;
+}
+
+.theme-clean .pagewright-index-eyebrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #6366f1;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.theme-clean .pagewright-count-badge {
+  background: #ede9fe;
+  color: #5b21b6;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: normal;
+}
+
+.theme-clean .pagewright-index-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.theme-clean .pagewright-index-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.theme-clean .pagewright-index-doc-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 12px;
+  color: #64748b;
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.theme-clean .pagewright-index-divider {
+  height: 2px;
+  background: linear-gradient(90deg, #6366f1, #a855f7, #e2e8f0);
+  margin: 12px 0 16px 0;
+  border-radius: 2px;
+}
+
+.theme-clean .pagewright-index-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.theme-clean .pagewright-index-table th {
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 8px;
+  border-bottom: 1.5px solid #e2e8f0;
+  text-align: left;
+}
+
+.theme-clean .pagewright-th-num { width: 36px; text-align: center !important; }
+.theme-clean .pagewright-th-title { width: auto; }
+.theme-clean .pagewright-th-dots { width: 60px; }
+.theme-clean .pagewright-th-tag { width: 75px; text-align: right !important; }
+
+.theme-clean .pagewright-index-row {
+  border-bottom: 1px solid #f1f5f9;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.theme-clean .pagewright-index-row td {
+  padding: 8px;
+  vertical-align: middle;
+}
+
+.theme-clean .pagewright-col-num {
+  text-align: center;
+}
+
+.theme-clean .pagewright-num-badge {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.theme-clean .badge-major {
+  background: #ede9fe;
+  color: #4f46e5;
+}
+
+.theme-clean .badge-sub {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.theme-clean .pagewright-index-link {
+  text-decoration: none;
+  color: #1e293b;
+  font-size: 13.5px;
+  display: inline-block;
+}
+
+.theme-clean .major-row .pagewright-index-link {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.theme-clean .sub-row .pagewright-index-link {
+  font-weight: 500;
+  color: #334155;
+}
+
+.theme-clean .pagewright-dots-filler {
+  display: block;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1.5px dotted #cbd5e1;
+}
+
+.theme-clean .pagewright-col-tag {
+  text-align: right;
+}
+
+.theme-clean .pagewright-level-pill {
+  display: inline-block;
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 7px;
+  border-radius: 9999px;
+}
+
+.theme-clean .pagewright-level-pill.level-1 {
+  background: #f3e8ff;
+  color: #7e22ce;
+}
+
+.theme-clean .pagewright-level-pill.level-2 {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.theme-clean .pagewright-level-pill.level-3 {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.theme-clean .pagewright-card-badge {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.theme-clean .pagewright-card-content p {
+  margin-bottom: 0.8em;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #334155;
+}
+
+.theme-clean .pagewright-toc-list {
+  padding-left: 1.5em;
+  margin: 8px 0 0 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.theme-clean .pagewright-toc-item span {
+  color: #1a5276;
+  font-weight: 500;
+}
+
+/* Study Notes */
+.theme-clean .pagewright-study-notes-block {
+  margin: 24px 0 36px 0;
+  padding: 20px 24px;
+  background: #fdfefe;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.theme-clean .pagewright-study-header {
+  margin-bottom: 16px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+.theme-clean .pagewright-notes-subtitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 16px 0 8px 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.theme-clean .pagewright-notes-overview p {
+  font-size: 15px;
+  font-style: italic;
+  color: #475569;
+  margin-bottom: 16px;
+}
+
+.theme-clean .pagewright-notes-list {
+  padding-left: 1.5em;
+  margin-bottom: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.theme-clean .pagewright-notes-list li {
+  margin-bottom: 6px;
+}
+
+.theme-clean .pagewright-notes-divider {
+  border: none;
+  border-top: 1px dashed #cbd5e1;
+  margin: 28px 0 20px 0;
+}
+
+@media print {
+  .theme-clean .pagewright-content {
+    max-width: 100%;
+  }
+}
