@@ -29,7 +29,7 @@ const TOGGLE_FEATURES: { key: keyof ConversionSettings; label: string; desc: str
 ];
 
 export const SettingsPanel: React.FC<Props> = ({ settings, onUpdate, disabled, onClose }) => {
-  const [activeTab, setActiveTab] = useState<'layout' | 'ai'>('layout');
+  const [activeTab, setActiveTab] = useState<'layout' | 'ai' | 'about'>('layout');
   const [testStatus, setTestStatus] = useState<{ testing: boolean; success?: boolean; message?: string } | null>(null);
 
   const ai = settings.ai || {
@@ -98,24 +98,24 @@ export const SettingsPanel: React.FC<Props> = ({ settings, onUpdate, disabled, o
       </div>
 
       {/* Segmented Tab Bar */}
-      <div className="grid grid-cols-2 p-1 bg-black/40 border border-white/10 rounded-xl gap-1">
+      <div className="grid grid-cols-3 p-1 bg-black/40 border border-white/10 rounded-xl gap-1">
         <button
           type="button"
           onClick={() => setActiveTab('layout')}
-          className={`py-1.5 px-2 rounded-lg text-xs font-bold transition-all duration-200 flex items-center justify-center gap-1.5 cursor-pointer ${
+          className={`py-1.5 px-2 rounded-lg text-xs font-bold transition-all duration-200 flex items-center justify-center gap-1 cursor-pointer ${
             activeTab === 'layout'
               ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-500/25'
               : 'text-slate-400 hover:text-slate-200 hover:bg-white/[0.04]'
           }`}
         >
           <span>📄</span>
-          <span>Layout & Format</span>
+          <span>Layout</span>
         </button>
 
         <button
           type="button"
           onClick={() => setActiveTab('ai')}
-          className={`py-1.5 px-2 rounded-lg text-xs font-bold transition-all duration-200 flex items-center justify-center gap-1.5 cursor-pointer ${
+          className={`py-1.5 px-2 rounded-lg text-xs font-bold transition-all duration-200 flex items-center justify-center gap-1 cursor-pointer ${
             activeTab === 'ai'
               ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-500/25'
               : 'text-slate-400 hover:text-slate-200 hover:bg-white/[0.04]'
@@ -127,10 +127,23 @@ export const SettingsPanel: React.FC<Props> = ({ settings, onUpdate, disabled, o
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
           )}
         </button>
+
+        <button
+          type="button"
+          onClick={() => setActiveTab('about')}
+          className={`py-1.5 px-2 rounded-lg text-xs font-bold transition-all duration-200 flex items-center justify-center gap-1 cursor-pointer ${
+            activeTab === 'about'
+              ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-500/25'
+              : 'text-slate-400 hover:text-slate-200 hover:bg-white/[0.04]'
+          }`}
+        >
+          <span>ℹ️</span>
+          <span>About</span>
+        </button>
       </div>
 
       {/* Tab 1: Layout & Format */}
-      {activeTab === 'layout' ? (
+      {activeTab === 'layout' && (
         <div className="space-y-3">
           {/* Paper Format & Orientation Segmented Controls */}
           <div className="grid grid-cols-2 gap-2">
@@ -333,8 +346,10 @@ export const SettingsPanel: React.FC<Props> = ({ settings, onUpdate, disabled, o
             </div>
           </div>
         </div>
-      ) : (
-        /* Tab 2: AI Engine & Features */
+      )}
+
+      {/* Tab 2: AI Engine & Features */}
+      {activeTab === 'ai' && (
         <div className="space-y-3">
           {/* AI Provider Selector */}
           <div>
@@ -591,6 +606,83 @@ export const SettingsPanel: React.FC<Props> = ({ settings, onUpdate, disabled, o
                 );
               })}
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Tab 3: About & System Info */}
+      {activeTab === 'about' && (
+        <div className="space-y-3 animate-fade-in">
+          {/* Identity Card */}
+          <div className="p-3 rounded-2xl bg-white/[0.03] border border-white/10 text-center relative overflow-hidden">
+            <div className="absolute -top-4 -right-4 w-20 h-20 bg-cyan-500/10 rounded-full blur-xl pointer-events-none" />
+            <img
+              src="/icons/icon-48.png"
+              alt="Pagewright Logo"
+              className="w-11 h-11 rounded-xl shadow-lg border border-white/15 mx-auto mb-2 object-contain"
+            />
+            <div className="flex items-center justify-center gap-1.5 leading-none mb-1">
+              <span className="font-extrabold text-sm text-white tracking-tight">Pagewright</span>
+              <span className="text-[9px] font-black px-1.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                v1.0.1
+              </span>
+            </div>
+            <p className="text-[10px] text-slate-400 max-w-[280px] mx-auto leading-relaxed">
+              Publication-grade web-to-PDF engine with true vector fidelity, distraction-free reading, and pluggable local AI.
+            </p>
+          </div>
+
+          {/* Details List */}
+          <div className="space-y-1.5">
+            <div className="p-2 rounded-xl bg-white/[0.02] border border-white/10 flex items-center justify-between text-[10.5px]">
+              <span className="text-slate-400 font-medium">Design & Engine</span>
+              <span className="text-slate-200 font-bold">Midnight Ink 60fps</span>
+            </div>
+            <div className="p-2 rounded-xl bg-white/[0.02] border border-white/10 flex items-center justify-between text-[10.5px]">
+              <span className="text-slate-400 font-medium">Author</span>
+              <span className="text-slate-200 font-bold">Subhradeep Kundu</span>
+            </div>
+            <div className="p-2 rounded-xl bg-white/[0.02] border border-white/10 flex items-center justify-between text-[10.5px]">
+              <span className="text-slate-400 font-medium">Architecture</span>
+              <span className="text-slate-200 font-bold">Manifest V3 • Local-First</span>
+            </div>
+            <div className="p-2 rounded-xl bg-white/[0.02] border border-white/10 flex items-center justify-between text-[10.5px]">
+              <span className="text-slate-400 font-medium">License</span>
+              <span className="text-cyan-400 font-bold">MIT Open Source</span>
+            </div>
+          </div>
+
+          {/* Links Grid */}
+          <div className="grid grid-cols-2 gap-1.5 pt-1">
+            <a
+              href="https://github.com/subhradeepkundu270305/pagewright"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-white text-[11px] font-bold flex items-center justify-center gap-1.5 transition-all press-effect"
+            >
+              <span>🐙</span>
+              <span>GitHub Repo</span>
+            </a>
+            <a
+              href="https://github.com/subhradeepkundu270305/pagewright/releases"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-white text-[11px] font-bold flex items-center justify-center gap-1.5 transition-all press-effect"
+            >
+              <span>📦</span>
+              <span>Releases</span>
+            </a>
+          </div>
+
+          <div className="text-center pt-0.5">
+            <a
+              href="https://github.com/subhradeepkundu270305/pagewright/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] text-slate-400 hover:text-cyan-300 transition-colors inline-flex items-center gap-1"
+            >
+              <span>🐛 Found an issue? Report on GitHub →</span>
+            </a>
           </div>
         </div>
       )}

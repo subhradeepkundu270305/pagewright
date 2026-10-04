@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="public/icons/icon-128.png" width="96" height="96" alt="Pagewright Logo" style="border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);" />
+
 # ✦ Pagewright
 
 ### Turn Any Webpage into Publication-Grade PDFs in One Click
@@ -11,11 +13,11 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.4-3178C6?style=flat-square&logo=typescript&logoColor=white)](tsconfig.json)
 [![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?style=flat-square&logo=vite&logoColor=white)](vite.config.ts)
 [![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4-38B2AC?style=flat-square&logo=tailwindcss&logoColor=white)](tailwind.config.ts)
-[![Release](https://img.shields.io/badge/Release-v1.0.0-8B5CF6?style=flat-square)](https://github.com/subhradeepkundu270305/pagewright/releases)
+[![Release](https://img.shields.io/badge/Release-v1.0.1-8B5CF6?style=flat-square)](https://github.com/subhradeepkundu270305/pagewright/releases/tag/v1.0.1)
 
 <br />
 
-[**Key Features**](#-key-features) • [**Chrome Installation Guide**](#-installation-guide-chrome) • [**How to Use**](#-how-to-use) • [**AI Intelligence**](#-ai-intelligence-setup) • [**Design System**](#-midnight-ink-design-system) • [**Releasing**](#-releasing--packaging) • [**Architecture**](#-architecture)
+[**Key Features**](#-key-features) • [**Chrome Installation Guide**](#-installation-guide-chrome) • [**How to Use**](#-how-to-use) • [**AI Intelligence**](#-ai-intelligence-setup) • [**Design System**](#-midnight-ink-design-system) • [**About**](#️-about-pagewright) • [**Architecture**](#-architecture)
 
 </div>
 
@@ -47,7 +49,8 @@ Standard browser "Print to PDF" was designed decades ago for physical printers:
 | **📚 AI Study Guide Mode** | Automatically analyzes webpage content to produce a comprehensive academic briefing with Key Concepts, Executive Summary, Core Takeaways, and Self-Study Quiz questions. |
 | **✨ Smart AI Enhancements** | Additive AI toggles for standard modes: auto-generate an Executive Summary card, Smart Table of Contents (with heading-based fallback), and clean sanitized titles. |
 | **🖼️ Offline Image Inlining** | Eagerly loads lazy images and inlines them into base64 data URIs via temporary canvas rendering, making images 100% immune to CORS, referrer checks, or CDN blocking. |
-| **👁️ Interactive PDF Preview** | Open and inspect your PDF inside an integrated browser viewer tab before saving to disk. |
+| **👁️ Full-Tab Responsive Preview** | Open and inspect your PDF inside an auto-fitting (`FitH`) full-viewport viewer tab with an instant **"Open in Tab"** action before saving to disk. |
+| **🎨 Official Branding & Squircle** | High-resolution custom icon set (`16px` to `512px`) and zero-clip concentric squircle UI geometry. |
 | **⚙️ Deep Formatting Controls** | Toggle Paper Size (A4 / Letter), Orientation (Portrait / Landscape), Margins (Narrow, Normal, Wide), Zoom Scale, Page Numbers, Headers, and Footers. |
 
 ---
@@ -59,10 +62,10 @@ Pagewright is built as a standard **Manifest V3** Chrome extension. You can inst
 ### Method 1: Install from Pre-built Release Zip (Fastest)
 
 1. **Download the Release**:
-   - Go to [**Pagewright Releases**](https://github.com/subhradeepkundu270305/pagewright/releases).
-   - Download the latest `pagewright-v1.0.0.zip` file.
+   - Go to [**Pagewright Releases (v1.0.1)**](https://github.com/subhradeepkundu270305/pagewright/releases/tag/v1.0.1).
+   - Download the latest [**`pagewright-v1.0.1.zip`**](https://github.com/subhradeepkundu270305/pagewright/releases/download/v1.0.1/pagewright-v1.0.1.zip) file.
 2. **Unpack the Zip**:
-   - Extract `pagewright-v1.0.0.zip` to a folder on your computer (e.g., `~/Documents/Pagewright`).
+   - Extract `pagewright-v1.0.1.zip` to a folder on your computer (e.g., `~/Documents/Pagewright`).
 3. **Open Chrome Extensions Manager**:
    - In Google Chrome, open a new tab and navigate to:
      ```
@@ -165,16 +168,40 @@ npm run package
 This produces a ready-to-publish archive:
 ```
 release/
-└── pagewright-v1.0.0.zip   # ~120 KB production release archive
+└── pagewright-v1.0.1.zip   # ~418 KB production release archive
 ```
 You can upload this zip directly to the **Chrome Web Store Developer Dashboard** or attach it to a **GitHub Release**.
 
 ### 2. Automated GitHub Releases via Git Tags
 The included GitHub Actions workflow ([`.github/workflows/build-and-release.yml`](.github/workflows/build-and-release.yml)) automatically runs all 74 unit tests, packages the extension, and creates a public GitHub Release with release notes whenever you push a version tag:
 ```bash
-git tag v1.0.0
-git push origin v1.0.0
+git tag v1.0.1
+git push origin v1.0.1
 ```
+
+---
+
+## ℹ️ About Pagewright
+
+Pagewright is an open-source, privacy-first web-to-PDF engine engineered by **Subhradeep Kundu**.
+
+### The Motivation
+Standard browser printing solutions were designed for physical dot-matrix and laser printers decades ago. When applied to modern rich web applications, the results are broken layouts, missing lazy images, unclickable links, and pages obscured by cookie consent banners and sticky overlays. Online cloud converters, on the other hand, require uploading confidential documents and authenticated sessions to third-party servers.
+
+Pagewright was built from the ground up to solve this:
+- **True Vector Quality**: Drives the Chrome DevTools Protocol (`Page.printToPDF`) to output genuine vector typography, scalable graphics, and selectable text rather than rasterized canvas screenshots.
+- **Intelligent DOM Cleaning**: Intelligently purges intrusive popups, cookie consent overlays (OneTrust, Cookiebot, Didomi), sticky sidebars, and ads while preserving article semantics and responsive formatting.
+- **100% Local & Zero Telemetry**: Operates completely in-browser on the user's device without tracking, data harvesting, or cloud dependencies.
+- **Pluggable Local-First AI**: Connects optionally with on-device Chrome Gemini Nano, local Ollama endpoints, or Groq Cloud to synthesize executive summaries, study guides, and structured tables of contents.
+- **Midnight Ink Design System**: Features a high-performance dark aesthetic with concentric squircle geometry, subpixel 2D parallax, and 60fps physics-driven micro-interactions.
+
+### Author & Maintainer
+- **Subhradeep Kundu**
+  - **GitHub**: [@subhradeepkundu270305](https://github.com/subhradeepkundu270305)
+  - **Repository**: [github.com/subhradeepkundu270305/pagewright](https://github.com/subhradeepkundu270305/pagewright)
+  - **Releases**: [Pagewright GitHub Releases](https://github.com/subhradeepkundu270305/pagewright/releases)
+  - **Issues**: [GitHub Issue Tracker](https://github.com/subhradeepkundu270305/pagewright/issues)
+  - **Email**: `subhradeepkundu2005@gmail.com`
 
 ---
 
