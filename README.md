@@ -1,6 +1,8 @@
 <div align="center">
 
-<img src="public/icons/icon-128.png" width="96" height="96" alt="Pagewright Logo" style="border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);" />
+<img src="assets/banner.png" alt="Pagewright — Turn Any Webpage into Publication-Grade PDFs" width="100%" style="border-radius: 16px; margin-bottom: 20px;" />
+
+<img src="public/icons/icon-128.png" width="80" height="80" alt="Pagewright Logo" style="border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.4);" />
 
 # ✦ Pagewright
 
