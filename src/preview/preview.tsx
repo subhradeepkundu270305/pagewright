@@ -9,7 +9,8 @@ interface PreviewData {
 }
 
 function b64toBlob(b64Data: string, contentType = 'application/pdf'): Blob {
-  const byteCharacters = atob(b64Data);
+  const cleanB64 = b64Data.replace(/^data:application\/pdf;base64,/, '').replace(/\s/g, '');
+  const byteCharacters = atob(cleanB64);
   const byteArrays = [];
 
   for (let offset = 0; offset < byteCharacters.length; offset += 512) {
@@ -124,13 +125,11 @@ export const PreviewApp: React.FC = () => {
       {/* Top action toolbar styled with Midnight Ink */}
       <header className="bg-[#0B1020]/90 backdrop-blur-md border-b border-white/[0.08] px-6 py-3 flex items-center justify-between text-white z-10 shrink-0">
         <div className="flex items-center gap-3 min-w-0">
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-400 p-[1px] shadow-sm shrink-0">
-            <div className="w-full h-full rounded-[11px] bg-[#0B1020] flex items-center justify-center">
-              <svg className="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-            </div>
-          </div>
+          <img
+            src="/icons/icon-48.png"
+            alt="Pagewright"
+            className="w-8 h-8 rounded-xl shadow-sm shrink-0 object-contain"
+          />
           <div className="min-w-0">
             <div className="flex items-center gap-2">
               <h1 className="text-sm font-bold truncate leading-tight text-white">
@@ -147,6 +146,19 @@ export const PreviewApp: React.FC = () => {
         </div>
 
         <div className="flex items-center gap-3 shrink-0">
+          <button
+            onClick={() => {
+              if (pdfBlobUrl) window.open(pdfBlobUrl, '_blank');
+            }}
+            className="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/10 border border-white/10 transition-all flex items-center gap-1.5 cursor-pointer"
+            title="Open PDF directly in a new browser tab"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            <span>Open in Tab</span>
+          </button>
+
           <button
             onClick={handleDownload}
             className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-all cursor-pointer shadow-md ${
@@ -187,7 +199,7 @@ export const PreviewApp: React.FC = () => {
       {/* Embedded PDF Viewer */}
       <main className="flex-1 bg-[#121629] w-full h-full relative">
         <iframe
-          src={`${pdfBlobUrl}#toolbar=1&navpanes=0`}
+          src={`${pdfBlobUrl}#view=FitH&toolbar=1`}
           title="PDF Preview"
           className="w-full h-full border-0 absolute inset-0"
         />

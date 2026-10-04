@@ -121,17 +121,15 @@ export const Popup: React.FC = () => {
   };
 
   return (
-    <div className="w-[420px] min-w-[420px] max-w-[420px] flex flex-col relative rounded-[32px] overflow-hidden bg-[#0B1020] text-slate-100 antialiased select-none border border-white/10 shadow-2xl">
+    <div className="popup-shell w-[420px] min-w-[420px] max-w-[420px] flex flex-col relative rounded-[32px] overflow-hidden bg-[#0B1020] text-slate-100 antialiased select-none border border-white/10 shadow-2xl">
       {/* Top Header Bar */}
       <header className="relative z-10 flex items-center justify-between px-3.5 py-2.5 border-b border-white/[0.08] bg-[#0E1326] rounded-t-[32px]">
         <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-400 p-[1px] shadow-sm">
-            <div className="w-full h-full rounded-[7px] bg-[#0B1020] flex items-center justify-center">
-              <svg className="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-            </div>
-          </div>
+          <img
+            src="/icons/icon-48.png"
+            alt="Pagewright"
+            className="w-7 h-7 rounded-lg shadow-sm object-contain"
+          />
           <div>
             <div className="flex items-center gap-1.5 leading-none">
               <span className="font-extrabold text-[13.5px] text-white tracking-tight">Pagewright</span>

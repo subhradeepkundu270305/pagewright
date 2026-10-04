@@ -4,9 +4,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pagewright — PDF Preview</title>
+  <link rel="icon" type="image/png" href="/icons/icon-32.png">
+  <style>
+    html, body {
+      width: 100vw !important;
+      min-width: 100vw !important;
+      max-width: 100vw !important;
+      height: 100vh !important;
+      min-height: 100vh !important;
+      max-height: 100vh !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border-radius: 0 !important;
+      overflow: hidden !important;
+      background-color: #0B1020 !important;
+      color: #E6E9F5 !important;
+      box-sizing: border-box !important;
+    }
+    #preview-root {
+      width: 100vw !important;
+      height: 100vh !important;
+      display: flex;
+      flex-direction: column;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+    }
+  </style>
 </head>
-<body class="bg-slate-100 text-slate-800 m-0 p-0 h-screen flex flex-col font-sans">
-  <div id="preview-root" class="h-full flex flex-col"></div>
+<body class="bg-[#0B1020] text-slate-100 m-0 p-0 h-screen w-screen overflow-hidden flex flex-col font-sans">
+  <div id="preview-root"></div>
   <script type="module" src="preview.tsx"></script>
 </body>
 </html>

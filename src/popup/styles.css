@@ -4,15 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* === Midnight Ink Base Settings (420px Spacious Shell) === */
+/* === Midnight Ink Base Settings === */
 html, body {
-  width: 420px !important;
-  min-width: 420px !important;
-  max-width: 420px !important;
   margin: 0 !important;
   padding: 0 !important;
-  border-radius: var(--radius-xl) !important;
-  overflow: hidden !important;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif;
   background-color: #0B1020 !important;
   color: var(--text);
@@ -20,7 +15,8 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#root {
+/* Specific sizing for Popup Shell (does not restrict full-tab preview or playground) */
+.popup-shell {
   width: 420px !important;
   min-width: 420px !important;
   max-width: 420px !important;
